@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  /* 🎯 Botones y texto */
+  --color-cta: #ff4f64; /* Botón principal (CTA) */
+  --color-texto-principal: #ffffff; /* Texto principal */
+  --color-texto-subtitulo: #cccccc; /* Subtítulos o descripciones */
+
+  /* 🎨 Degradados lineales */
+  --degradado-lineal-1: linear-gradient(to bottom, #0e0e0e 30%, #1a1a1a 100%);
+  --degradado-lineal-newsletter: linear-gradient(
+    0deg,
+    #0e0e0e 0%,
+    #141414 100%
+  );
+
+  /* 🌈 Degradados radiales */
+  --degradado-radial-1: radial-gradient(
+    circle,
+    rgba(0, 170, 179, 0.2) 0%,
+    rgba(128, 108, 132, 0.18) 50%,
+    rgba(11, 11, 14, 0.15) 100%
+  );
+
+  --degradado-radial-2: radial-gradient(circle, #242424 0%, #000000 100%);
+
+  --degradado-radial-video: radial-gradient(circle, #221c18 57%, #000000 100%);
+
+  --degradado-radial-contact: radial-gradient(
+    circle,
+    rgba(59, 30, 30, 0.2) 0%,
+    rgba(14, 14, 14, 1) 100%
+  );
+
+  /* 🦶 Footer */
+  --color-footer: #0b0b0b;
+  --color-footer-2: #222222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100vh;
+
+  .hero {
+    background-image: url("/Practica-2-Portfolio/assets/hero.png");
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: right center;
+
+    /* Principio del header */
+    .main-header {
+      height: 15%;
+
+      nav {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-left: 60px;
+        height: 100%;
+
+        ul {
+          display: flex;
+          list-style: none;
+          gap: 70px;
+
+          li {
+            a {
+              text-decoration: none;
+              color: var(--color-texto-principal);
+              font-weight: 300;
+              font-size: 1.1rem;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+            }
+          }
+        }
+      }
+      /* Final del header */
+    }
+
+    /* Principio del hero-content */
+    .hero-content {
+      height: 85%;
+      width: 50%;
+      display: flex;
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      h1 {
+        font-family: "Anton", sans-serif;
+        font-size: 8rem;
+        font-weight: normal;
+        color: var(--color-texto-principal);
+        line-height: 1;
+      }
+      p {
+        font-size: 1rem;
+        color: var(--color-texto-subtitulo);
+        font-weight: 200;
+      }
+      button {
+        padding: 15px 30px;
+        font-size: 1rem;
+        color: var(--color-texto-principal);
+        background-color: var(--color-cta);
+        border: none;
+        font-weight: 300;
+        border-radius: 10px;
+        cursor: pointer;
+        letter-spacing: 2px;
+
+        &:hover {
+          background-color: var(--color-texto-principal);
+          color: var(--color-cta);
+        }
+      }
+    }
+  }
+  /* Final del hero-content */
+
+  .biography {
+    background: var(--degradado-lineal-1);
+    display: flex;
+
+    .biography-text,
+    .biography-img {
+      flex: 1;
+    }
+
+    .biography-img {
+      padding-top: 100px;
+    }
+
+    .biography-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      h1 {
+        font-size: 8rem;
+        font-weight: 300;
+        font-family: "Anton", sans-serif;
+        color: color-mix(
+          in srgb,
+          var(--color-texto-principal) 85%,
+          transparent
+        );
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      p {
+        padding: 0px 50px;
+        font-size: 1.3rem;
+        color: var(--color-texto-subtitulo);
+        line-height: 1.6;
+      }
+    }
+  }
+
+  #biography {
+    .social-media {
+      margin-top: 50px;
+      display: flex;
+
+      gap: 50px;
+    }
+  }
+
+  #origins {
+    h1 {
+      font-size: 6rem;
+    }
+    img {
+      padding-left: 180px;
+    }
+  }
+
+  #aesthetics {
+    .biography-text {
+      .title {
+        h1 {
+          font-size: 6rem;
+          padding-right: 100px;
+        }
+      }
+      .text {
+        h2 {
+          color: var(--color-texto-principal);
+        }
+      }
+    }
+    .biography-text p {
+      padding: 0px;
+      padding-right: 100px;
+      color: var(--color-texto-principal);
+    }
+  }
+}
+
