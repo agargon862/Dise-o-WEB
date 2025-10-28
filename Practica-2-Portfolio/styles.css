@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
-  /* 🎯 Botones y texto */
-  --color-cta: #ff4f64; /* Botón principal (CTA) */
-  --color-texto-principal: #ffffff; /* Texto principal */
-  --color-texto-subtitulo: #cccccc; /* Subtítulos o descripciones */
+  --color-cta: #ff4f64;
+  --color-texto-principal: #ffffff;
+  --color-texto-subtitulo: #cccccc;
 
-  /* 🎨 Degradados lineales */
   --degradado-lineal-1: linear-gradient(to bottom, #0e0e0e 30%, #1a1a1a 100%);
   --degradado-lineal-newsletter: linear-gradient(
     0deg,
@@ -14,9 +12,8 @@
     #141414 100%
   );
 
-  /* 🌈 Degradados radiales */
   --degradado-radial-1: radial-gradient(
-    circle,
+    circle at 20% 30%,
     rgba(0, 170, 179, 0.2) 0%,
     rgba(128, 108, 132, 0.18) 50%,
     rgba(11, 11, 14, 0.15) 100%
@@ -32,7 +29,6 @@
     rgba(14, 14, 14, 1) 100%
   );
 
-  /* 🦶 Footer */
   --color-footer: #0b0b0b;
   --color-footer-2: #222222;
 }
@@ -52,50 +48,55 @@ html {
 .wrapper {
   min-height: 100vh;
 
+  .main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent; /* elimina la franja negra */
+    z-index: 10; /* asegúrate que quede encima del hero */
+    nav {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      margin-left: 60px;
+      height: 100%;
+      padding-top: 5vh;
+
+      ul {
+        display: flex;
+        list-style: none;
+        gap: clamp(30px, 5vw, 70px);
+
+        li {
+          a {
+            text-decoration: none;
+            color: var(--color-texto-principal);
+            font-weight: 300;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+    /* Final del header */
+  }
+
   .hero {
-    background-image: url("/Practica-2-Portfolio/assets/hero.png");
+    background-image: url("assets/hero.png");
     height: 100vh;
     background-size: contain;
     background-repeat: no-repeat;
     background-color: black;
     background-position: right center;
+    
 
-    /* Principio del header */
-    .main-header {
-      height: 15%;
-
-      nav {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        margin-left: 60px;
-        height: 100%;
-
-        ul {
-          display: flex;
-          list-style: none;
-          gap: 70px;
-
-          li {
-            a {
-              text-decoration: none;
-              color: var(--color-texto-principal);
-              font-weight: 300;
-              font-size: 1.1rem;
-              text-transform: uppercase;
-              letter-spacing: 2px;
-            }
-          }
-        }
-      }
-      /* Final del header */
-    }
-
-    /* Principio del hero-content */
     .hero-content {
       height: 85%;
       width: 50%;
       display: flex;
+      padding-top: 20vh;
 
       flex-direction: column;
       justify-content: center;
@@ -132,11 +133,11 @@ html {
       }
     }
   }
-  /* Final del hero-content */
 
   .biography {
     background: var(--degradado-lineal-1);
     display: flex;
+    min-height: 90vh;
 
     .biography-text,
     .biography-img {
@@ -144,7 +145,16 @@ html {
     }
 
     .biography-img {
-      padding-top: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 0px;
+    }
+
+    .biography-img img {
+      width: clamp(450px, 40vw, 1500px);
+      height: auto;
+      flex-shrink: 0;
     }
 
     .biography-text {
@@ -214,3 +224,164 @@ html {
   }
 }
 
+.albums {
+  background-image: url("assets/Albumfondo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+
+  color: var(--color-texto-principal);
+  padding: 110px 0 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(3.2rem, 7vw, 6.2rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 2px;
+
+    margin-bottom: 36px;
+  }
+
+  .latest-album-container {
+    width: 92%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-size: 1.2rem;
+      color: var(--color-texto-subtitulo);
+      font-weight: 300;
+      margin-bottom: 26px;
+    }
+
+    .latest-album {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      padding: clamp(24px, 4vw, 48px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(22px, 3vw, 32px);
+
+      .latest-album-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: clamp(20px, 4vw, 48px);
+        flex-wrap: wrap;
+
+        .latest-album-text {
+          flex: 1;
+          text-align: left;
+
+          h1 {
+            font-family: inter, sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--color-texto-principal);
+          }
+
+          p {
+            
+            margin: 8px 0;
+            color: var(--color-texto-subtitulo);
+            font-size: 0.98rem;
+            line-height: 1.6;
+            max-width: 520px;
+          }
+        }
+
+        .latest-album-cover {
+          width: clamp(200px, 24vw, 300px);
+          height: clamp(200px, 24vw, 300px);
+          border-radius: 14px;
+          background-image: url("assets/cover.jpg");
+          background-size: cover;
+          background-position: center;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+          flex-shrink: 0;
+        }
+      }
+
+      .latest-album-down {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+
+        iframe {
+          width: 100%;
+          max-width: 300px;
+          height: 80px;
+          border: none;
+          border-radius: 12px;
+        }
+      }
+    }
+
+    .other-albums {
+      margin-top: 90px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 36px;
+
+      h1 {
+        font-family: inter, sans-serif;
+        width: 100%;
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 6px;
+      }
+
+      .estrella,
+      .paraiso,
+      .microdosis {
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 14px;
+        width: clamp(260px, 28vw, 360px);
+        padding: 26px 20px 22px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        h1 {
+          font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+          font-family: inter, sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin: 0;
+        }
+
+        p {
+          color: var(--color-texto-subtitulo);
+          font-size: 0.95rem;
+          margin: 0 0 6px;
+        }
+
+        iframe {
+          width: 100%;
+          height: 160px;
+          border: 0;
+          border-radius: 12px;
+          background: #121212;
+        }
+      }
+    }
+  }
+}
