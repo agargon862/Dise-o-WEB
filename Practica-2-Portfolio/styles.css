@@ -7,22 +7,11 @@
   --color-texto-subtitulo: #cccccc;
 
   --degradado-lineal-1: linear-gradient(to bottom, #0e0e0e 30%, #1a1a1a 100%);
-  --degradado-lineal-newsletter: linear-gradient(0deg,
-      #0e0e0e 0%,
-      #141414 100%);
-
-  --degradado-radial-1: radial-gradient(circle at 20% 30%,
-      rgba(0, 170, 179, 0.2) 0%,
-      rgba(128, 108, 132, 0.18) 50%,
-      rgba(11, 11, 14, 0.15) 100%);
-
+  --degradado-lineal-newsletter: linear-gradient(0deg, #0e0e0e 0%, #141414 100%);
+  --degradado-radial-1: radial-gradient(circle at 20% 30%, rgba(0, 170, 179, 0.2) 0%, rgba(128, 108, 132, 0.18) 50%, rgba(11, 11, 14, 0.15) 100%);
   --degradado-radial-2: radial-gradient(circle, #242424 0%, #000000 100%);
-
   --degradado-radial-video: radial-gradient(circle, #221c18 57%, #000000 100%);
-
-  --degradado-radial-contact: radial-gradient(circle,
-      rgba(59, 30, 30, 0.2) 0%,
-      rgba(14, 14, 14, 1) 100%);
+  --degradado-radial-contact: radial-gradient(circle, rgba(59, 30, 30, 0.2) 0%, rgba(14, 14, 14, 1) 100%);
 
   --color-footer: #0b0b0b;
   --color-footer-2: #222222;
@@ -41,8 +30,6 @@
   --title-size: 6rem;
   --subtitle-size: 1.2rem;
 }
-
-/*-----------------------------------------------PRINCIPIO------------------------------------------------------*/
 
 * {
   margin: 0;
@@ -72,7 +59,6 @@ html {
       display: flex;
       justify-content: start;
       align-items: center;
-      height: 100%;
       padding-top: var(--spacing-lg);
 
       ul {
@@ -98,26 +84,25 @@ html {
     }
   }
 
-  /*-----------------------------------------------HERO------------------------------------------------------*/
-
   .hero {
     background-image: url("assets/hero.png");
-    height: 100vh;
+    min-height: 100vh;
     background-size: contain;
     background-repeat: no-repeat;
     background-color: black;
     background-position: right center;
+    padding: 20vh var(--spacing-xl) var(--spacing-2xl);
+    display: flex;
+    align-items: center;
 
     .hero-content {
-      height: 85%;
       width: 50%;
       display: flex;
-      padding-top: 20vh;
-      padding-left: var(--spacing-xl);
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: var(--spacing-md);
+      text-align: center;
 
       h1 {
         font-family: "Anton", sans-serif;
@@ -154,13 +139,10 @@ html {
     }
   }
 
-  /*-----------------------------------------------BIOGRAPHY------------------------------------------------------*/
-
   .biography {
     background: var(--degradado-lineal-1);
     display: flex;
-    min-height: 90vh;
-    padding-top: var(--spacing-xl);
+    padding-top: var(--spacing-3xl);
 
     .biography-text,
     .biography-img {
@@ -171,13 +153,11 @@ html {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      padding-bottom: 0;
     }
 
     .biography-img img {
       width: clamp(450px, 40vw, 1500px);
       height: auto;
-      flex-shrink: 0;
     }
 
     .biography-text {
@@ -191,9 +171,7 @@ html {
         font-size: var(--title-size);
         font-weight: 300;
         font-family: "Anton", sans-serif;
-        color: color-mix(in srgb,
-            var(--color-texto-principal) 85%,
-            transparent);
+        color: color-mix(in srgb, var(--color-texto-principal) 85%, transparent);
         margin-bottom: var(--spacing-md);
         text-transform: uppercase;
       }
@@ -248,8 +226,6 @@ html {
       color: var(--color-texto-principal);
     }
   }
-
-  /*-----------------------------------------------ALBUMS------------------------------------------------------*/
 
   .albums {
     background-image: url("assets/Albumfondo.png");
@@ -413,14 +389,13 @@ html {
     }
   }
 
-  /*-----------------------------------------------ON TOUR------------------------------------------------------*/
-
   .ontour {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     background-image: url(assets/image\ 7-1.png);
     background-repeat: no-repeat;
     background-size: cover;
+    padding: var(--spacing-3xl) clamp(20px, 5vw, 75px);
 
     .text {
       flex-direction: column;
@@ -428,7 +403,6 @@ html {
       display: flex;
       justify-content: center;
       align-items: start;
-      padding-left: clamp(20px, 5vw, 75px);
 
       p {
         color: var(--color-texto-principal);
@@ -447,20 +421,19 @@ html {
   }
 
   .ontour-container {
-    height: 150vh;
     background-image: url(assets/image\ 7.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-3xl);
 
     .ontour-title {
-      height: 20%;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding-top: 20px;
+      padding: var(--spacing-md) 0 var(--spacing-xl);
 
       h1 {
         color: var(--color-texto-principal);
@@ -477,20 +450,20 @@ html {
     }
 
     .ontour-dates {
-      height: 80%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 80px;
-      padding-top: 40px;
+      gap: var(--spacing-2xl);
+      padding: var(--spacing-lg) 0;
 
       .cities {
         display: flex;
         width: 90%;
         align-items: center;
-        border: 1px solid var(--color-texto-principal);
+        border: transparent;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
         border-radius: 10px;
-        height: 11.5%;
+        padding: var(--spacing-lg);
         background-color: rgba(26, 26, 26, 0.65);
 
         .cities-left {
@@ -531,8 +504,6 @@ html {
       }
     }
   }
-
-  /*-----------------------------------------------MERCH------------------------------------------------------*/
 
   .merch {
     background-color: #000;
@@ -695,13 +666,12 @@ html {
     }
   }
 
-  /*-----------------------------------------------NEWSLETTER------------------------------------------------------*/
-
   .newsletter {
     background: var(--degradado-lineal-newsletter);
     display: flex;
     flex-flow: row wrap;
     color: var(--color-texto-principal);
+ 
 
     .news-left {
       display: flex;
@@ -762,10 +732,11 @@ html {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding-top: var(--spacing-lg);
 
       .img {
         width: 100%;
-        height: 450px;
+        min-height: 450px;
         background-image: url(assets/moranews.png);
         background-size: contain;
         background-position: center;
@@ -773,8 +744,6 @@ html {
       }
     }
   }
-
-  /*-----------------------------------------------VIDEO------------------------------------------------------*/
 
   .newvideo {
     display: flex;
@@ -784,9 +753,10 @@ html {
     background-image: url(assets/Frame\ 6.png);
     color: var(--color-texto-principal);
     gap: 20px;
+    padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-3xl);
 
     h1 {
-      padding-top: 80px;
+      padding-top: var(--spacing-2xl);
       font-size: var(--title-size);
       text-transform: uppercase;
       font-family: "Anton", sans-serif;
@@ -801,23 +771,24 @@ html {
 
     .img {
       width: 100%;
-      height: 800px;
+      min-height: 800px;
       background-image: url(assets/video.png);
       background-position: center;
       background-repeat: no-repeat;
+      background-size: cover;
     }
   }
 
-  /*-----------------------------------------------CONTACT------------------------------------------------------*/
   .contact {
     display: flex;
     background: #0f0f0f;
     color: #fff;
     font-family: "Poppins", sans-serif;
+    padding: var(--spacing-2xl) 0;
 
     .contact-left {
       flex: 1;
-      padding: 80px;
+      padding: var(--spacing-2xl);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -855,7 +826,7 @@ html {
         }
 
         textarea {
-          height: 180px;
+          min-height: 180px;
         }
 
         button {
@@ -876,12 +847,10 @@ html {
       justify-content: center;
       align-items: center;
       flex: 1;
-      padding-top: var(--spacing-xl);
 
       .img {
         width: 100%;
-        height: 100%;
-
+        min-height: 700px;
         background-image: url("assets/mora-contact.png");
         background-repeat: no-repeat;
         background-size: contain;
@@ -891,15 +860,6 @@ html {
     }
   }
 
-
-
-
-  /*-----------------------------------------------FOOTER------------------------------------------------------*/
-
-
-
-
-
   footer {
     color: #ffffff;
 
@@ -908,11 +868,10 @@ html {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      padding: 80px 100px;
+      padding: var(--spacing-2xl) 100px;
       gap: 40px;
 
       .footer-column {
-
         h2 {
           font-size: 22px;
           margin-bottom: 24px;
@@ -972,6 +931,828 @@ html {
       padding: 20px;
       font-size: 13px;
       color: #a7a7a7;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .wrapper {
+    .main-header {
+      padding: 0 24px;
+
+      nav {
+        padding-top: 24px;
+
+        .hamburger {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            border: 1px solid white;
+            width: 20px;
+            margin: 2px;
+          }
+        }
+
+        ul {
+          gap: 20px;
+
+
+          li a {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .hero {
+      background-size: cover;
+      background-position: center;
+      padding: 15vh 24px 60px;
+
+      .hero-content {
+        width: 80%;
+      }
+    }
+
+    .biography {
+      flex-direction: column;
+      padding: 60px 0;
+
+      .biography-img img {
+        width: 80%;
+      }
+
+      .biography-text {
+        padding: 40px;
+
+        h1 {
+          font-size: 3.5rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    #origins {
+      img {
+        padding-left: 24px;
+      }
+    }
+
+    #aesthetics {
+      .biography-text {
+        .title h1 {
+          padding-right: 24px;
+        }
+
+        p {
+          padding-right: 24px;
+        }
+      }
+    }
+
+    .ontour-container {
+      .ontour-dates {
+        .cities {
+          flex-direction: column;
+          gap: 24px;
+          padding: 24px;
+
+          .cities-left,
+          .cities-right {
+            margin: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .merch {
+      padding: 60px 24px;
+
+      .product {
+        .product-card {
+          flex: 0 1 300px;
+        }
+      }
+    }
+
+    .newsletter {
+      flex-direction: column;
+      padding: 60px 24px;
+
+      .news-left {
+        padding-left: 24px;
+        align-items: center;
+        text-align: center;
+
+        input {
+          width: 100%;
+          max-width: 400px;
+        }
+      }
+
+      .news-rigth {
+        .img {
+          min-height: 300px;
+        }
+      }
+    }
+
+    .newvideo {
+      .img {
+        min-height: 500px;
+      }
+    }
+
+    .contact {
+      flex-direction: column;
+      padding: 60px 0;
+
+      .contact-left {
+        margin-left: 0;
+        padding: 40px 24px;
+
+        form {
+          max-width: 100%;
+        }
+      }
+
+      .contact-right {
+        .img {
+          min-height: 300px;
+        }
+      }
+    }
+
+    footer {
+      .footer {
+        padding: 60px 24px;
+        gap: 30px;
+
+        .phrase {
+          h1 {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .wrapper {
+    .main-header {
+      padding: 0 16px;
+
+      nav {
+        padding-top: 16px;
+
+        ul {
+          gap: 15px;
+          flex-wrap: wrap;
+
+          li a {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+
+    .hero {
+      padding: 10vh 16px 40px;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .hero-content {
+        width: 100%;
+        padding-top: 0;
+        align-items: center;
+        text-align: center;
+
+        h1 {
+          font-size: clamp(4rem, 12vw, 6rem);
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        button {
+          padding: 15px 35px;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .biography {
+      padding: 60px 0;
+
+      .biography-img {
+        img {
+          width: 100%;
+          max-width: 400px;
+        }
+      }
+
+      .biography-text {
+        padding: 24px;
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    #biography {
+      .social-media {
+        margin-top: 24px;
+        gap: 24px;
+      }
+    }
+
+    #origins {
+      img {
+        padding-left: 16px;
+      }
+    }
+
+    #aesthetics {
+      .biography-text {
+        .title h1 {
+          padding-right: 16px;
+        }
+
+        p {
+          padding-right: 16px;
+        }
+      }
+    }
+
+    .albums {
+      padding: 80px 16px;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .latest-album-container {
+        .latest-album {
+          padding: 24px;
+
+          .latest-album-top {
+            flex-direction: column;
+
+            .latest-album-text {
+              text-align: center;
+
+              h1 {
+                font-size: 1.5rem;
+              }
+
+              p {
+                font-size: 0.9rem;
+                max-width: 100%;
+              }
+            }
+
+            .latest-album-cover {
+              width: 250px;
+              height: 250px;
+            }
+          }
+
+          .latest-album-down {
+            iframe {
+              max-width: 100%;
+            }
+          }
+        }
+
+        .other-albums {
+          margin-top: 60px;
+
+          h1 {
+            font-size: 1rem;
+          }
+
+          .estrella,
+          .paraiso,
+          .microdosis {
+            width: 100%;
+            max-width: 350px;
+
+            h1 {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .ontour {
+      padding: 80px 16px;
+
+      .text {
+        align-items: center;
+        text-align: center;
+
+        p {
+          font-size: 1.2rem;
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .ontour-container {
+      padding: 60px 16px;
+
+      .ontour-title {
+        padding: 16px 0 24px;
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .ontour-dates {
+        gap: 24px;
+        padding: 24px 0;
+
+        .cities {
+          width: 100%;
+          flex-direction: column;
+          padding: 24px;
+
+          .cities-left {
+            margin: 0;
+
+            h1 {
+              font-size: 20px;
+            }
+
+            p {
+              font-size: 14px;
+            }
+          }
+
+          .cities-right {
+            margin: 0;
+
+            a {
+              padding: 15px 30px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    .merch {
+      padding: 60px 16px;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+      }
+
+      .product {
+        .product-card {
+          flex: 0 1 100%;
+          max-width: 400px;
+
+          .product-image {
+            height: 300px;
+          }
+        }
+      }
+    }
+
+    .newsletter {
+      padding: 60px 16px;
+
+      .news-left {
+        padding: 0 16px;
+        gap: 16px;
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        input {
+          width: 100%;
+        }
+
+        button {
+          padding: 10px 25px;
+          font-size: 14px;
+        }
+      }
+
+      .news-rigth {
+        padding: 24px;
+
+        .img {
+          min-height: 250px;
+        }
+      }
+    }
+
+    .newvideo {
+      padding: 60px 16px;
+
+      h1 {
+        font-size: 2.5rem;
+        padding-top: 40px;
+      }
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      .img {
+        min-height: 300px;
+        background-size: cover;
+      }
+    }
+
+    .contact {
+      padding: 40px 0;
+
+      .contact-left {
+        padding: 24px;
+
+        h2 {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+
+        form {
+
+          input,
+          textarea {
+            padding: 15px;
+            font-size: 1rem;
+          }
+
+          textarea {
+            min-height: 150px;
+          }
+
+          button {
+            padding: 14px;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .contact-right {
+        padding: 24px;
+
+        .img {
+          min-height: 250px;
+        }
+      }
+    }
+
+    footer {
+      .footer {
+        padding: 60px 16px;
+        gap: 25px;
+
+        .footer-column {
+          h2 {
+            font-size: 18px;
+          }
+
+          p,
+          a {
+            font-size: 14px;
+          }
+        }
+
+        .phrase {
+          min-width: 100%;
+
+          h1 {
+            font-size: 26px;
+          }
+        }
+
+        .address,
+        .partnership {
+          min-width: 100%;
+        }
+      }
+
+      .footer-bottom {
+        padding: 15px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+
+  .wrapper {
+    .main-header {
+      nav {
+        ul {
+          gap: 10px;
+
+          li a {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+
+    .hero {
+      padding: 10vh 12px 25px;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .hero-content {
+        width: 100%;
+        padding-top: 0;
+        align-items: center;
+        text-align: center;
+
+        h1 {
+          font-size: clamp(3.5rem, 15vw, 5rem);
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        button {
+          padding: 14px 32px;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .biography {
+      padding: 40px 0;
+
+      .biography-img {
+        img {
+          max-width: 300px;
+        }
+      }
+
+      .biography-text {
+        padding: 12px;
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+        }
+      }
+    }
+
+    .albums {
+      padding: 50px 12px;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .latest-album-container {
+        .latest-album {
+          padding: 12px;
+
+          .latest-album-top {
+            .latest-album-text {
+              h1 {
+                font-size: 1.3rem;
+              }
+            }
+
+            .latest-album-cover {
+              width: 200px;
+              height: 200px;
+            }
+          }
+        }
+
+        .other-albums {
+
+          .estrella,
+          .paraiso,
+          .microdosis {
+            padding: 12px;
+
+            h1 {
+              font-size: 0.95rem;
+            }
+
+            p {
+              font-size: 0.85rem;
+            }
+
+            iframe {
+              height: 140px;
+            }
+          }
+        }
+      }
+    }
+
+    .ontour {
+      .text {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .ontour-container {
+      padding: 40px 12px;
+
+      .ontour-title {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .ontour-dates {
+        gap: 12px;
+
+        .cities {
+          padding: 12px;
+
+          .cities-left {
+            h1 {
+              font-size: 18px;
+            }
+          }
+
+          .cities-right {
+            a {
+              padding: 12px 25px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+
+    .merch {
+      padding: 40px 12px;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .product {
+        .product-card {
+          padding: 20px;
+
+          .product-image {
+            height: 250px;
+          }
+
+          .product-name {
+            font-size: 1rem;
+          }
+
+          .product-price {
+            font-size: 1.1rem;
+          }
+
+          .btn-buy {
+            padding: 12px 25px;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .newsletter {
+      padding: 40px 12px;
+
+      .news-left {
+        h2 {
+          font-size: 1.3rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+        }
+      }
+
+      .news-rigth {
+        .img {
+          min-height: 200px;
+        }
+      }
+    }
+
+    .newvideo {
+      padding: 40px 12px;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .img {
+        min-height: 250px;
+      }
+    }
+
+    .contact {
+      .contact-left {
+        padding: 12px;
+
+        form {
+          gap: 15px;
+
+          input,
+          textarea {
+            padding: 12px;
+            font-size: 0.95rem;
+          }
+
+          textarea {
+            min-height: 120px;
+          }
+
+          button {
+            padding: 12px;
+            font-size: 0.95rem;
+          }
+        }
+      }
+
+      .contact-right {
+        .img {
+          min-height: 200px;
+        }
+      }
+    }
+
+    footer {
+      .footer {
+        padding: 40px 12px;
+
+        .phrase {
+          h1 {
+            font-size: 22px;
+          }
+        }
+
+        .footer-column {
+          h2 {
+            font-size: 16px;
+          }
+
+          p,
+          a {
+            font-size: 13px;
+          }
+        }
+      }
     }
   }
 }

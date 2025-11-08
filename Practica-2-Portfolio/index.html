@@ -11,6 +11,11 @@
     <div class="wrapper">
       <header class="main-header">
         <nav>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <ul>
             <li><a href="#home">HOME</a></li>
             <li><a href="#biography">BIOGRAPHY</a></li>
@@ -550,7 +555,17 @@
       <section class="newvideo">
         <h1>Watch the latest release</h1>
         <h2>DETRÁS DE TU ALMA (Visualizer)</h2>
-        <div class="img"></div>
+        <iframe
+          class="img"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/GXtHkstZlOQ?si=y4jj0ZxrVPgi0oVi"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </section>
       <section class="contact" id="contact">
         <div class="contact-left">
@@ -561,9 +576,9 @@
           </p>
 
           <form>
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <textarea placeholder="Message" rows="6" required></textarea>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea placeholder="Message"></textarea>
             <button type="submit" class="btn">Send Message</button>
           </form>
         </div>
@@ -574,17 +589,17 @@
       </section>
       <footer>
         <div class="footer">
-
           <div class="footer-column phrase">
             <h1>Listen to my world and feel the vibe.</h1>
           </div>
 
-      
           <div class="footer-column address">
             <h2>Address</h2>
             <p>Calle Luna 45, 2°B, Madrid<br />Spain</p>
             <div class="contact-item">
-              <a href="mailto:booking@mora-official.com">booking@mora-official.com</a>
+              <a href="mailto:booking@mora-official.com"
+                >booking@mora-official.com</a
+              >
             </div>
             <div class="contact-item">
               <a href="tel:+34600555210">+34 600 555 210</a>
@@ -599,7 +614,10 @@
             <h2>Partnership & Label</h2>
             <p>Rimas Records</p>
             <p>
-              <a href="mailto:collabs@rimas-music.com">collabs@rimas-music.com</a></p>
+              <a href="mailto:collabs@rimas-music.com"
+                >collabs@rimas-music.com</a
+              >
+            </p>
             <p>(+1) 305 555 8873</p>
           </div>
         </div>
